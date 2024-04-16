@@ -1,0 +1,10 @@
+# drop any existing nftables ruleset
+flush ruleset
+
+# chain, policy and basic rules
+include "/etc/nftables/rules.d/*.nft"
+
+<%- if ($allow_local_rules) { -%>
+# additional local rules
+include "/etc/nftables/local.d/*.nft"
+<%- } -%>

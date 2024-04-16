@@ -1,0 +1,11 @@
+<%- $tables.each | String $table, Hash $chains | { -%>
+<%= $table %> {
+	<%- $chains.each | String $chain, $rules | { -%>
+	<%= $chain %> {
+	<%- $rules.each | String $index, String $rule | { -%>
+		<%= $rule %>
+	<%- } -%>
+	}
+	<%- } -%>
+}
+<%- } -%>
