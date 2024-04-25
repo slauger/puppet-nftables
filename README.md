@@ -9,7 +9,7 @@ nftables::rules:
   '100-basic':
     'table inet filter':
       'chain input':
-        '000 - policy': 'type filter hook output priority 100; policy accept;'
+        '000 - policy': 'type filter hook input priority 100; policy accept;'
         '110 - related and established': 'ct state established,related accept'
         '120 - icmp': 'ip protocol icmp accept'
         '130 - dhcp': 'udp dport { 67, 68 } ct state new accept'
@@ -19,7 +19,7 @@ nftables::rules:
       'chain output':
         '000 - policy': 'type filter hook output priority 100; policy accept;'
       'chain forward':
-        '000 - policy': 'type filter hook output priority 100; policy accept;'
+        '000 - policy': 'type filter hook forward priority 100; policy accept;'
   '999-reject':
     'table inet filter':
       'chain input':
