@@ -4,7 +4,7 @@ class nftables::config {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => epp("${module_name}/etc/sysconfig/nftables.epp"),
+    content => epp("${module_name}/etc/sysconfig/nftables.conf.epp"),
   }
 
   file { '/etc/nftables/main.nft':
