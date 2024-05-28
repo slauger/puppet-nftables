@@ -1,5 +1,5 @@
 class nftables::config {
-  file { '/etc/sysconfig/nftables':
+  file { '/etc/sysconfig/nftables.conf':
     ensure  => file,
     owner   => 'root',
     group   => 'root',
