@@ -24,13 +24,7 @@ class nftables::config {
     mode    => '0755',
     recurse => true,
     purge   => true,
-  }
-
-  file { '/etc/nftables/local.d':
-    ensure => directory,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0755',
+    ignore  => $nftables::rules_dir_ignore,
   }
 
   $nftables::rules.each | String $filename, Hash $content | {

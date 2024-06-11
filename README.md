@@ -25,3 +25,11 @@ nftables::rules:
       'chain input':
         '999 - reject': 'reject with icmp type port-unreachable'
 ```
+
+## Local rules
+
+Sometimes you want to add local rules, which are not managed via puppet.
+
+You can place local configuration files with the suffix `*.local.nft` in the directory `/etc/nftables/rules.d`.
+
+The ignore pattern can be changed via `nftables::rules_dir_ignore` (defaults to `['*.local.nft']`.

@@ -4,7 +4,7 @@ class nftables (
   Hash $rules,
   Boolean $manage_firewalld,
   Boolean $manage_iptables,
-  Boolean $allow_local_rules,
+  Array $rules_dir_ignore,
 ) {
   contain 'nftables::config'
   contain 'nftables::service'
