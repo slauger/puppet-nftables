@@ -5,4 +5,6 @@ nftables::service_enable: true
 nftables::manage_firewalld: true
 nftables::manage_iptables: true
 
+nftables::allow_local_rules: true
+
 nftables::rules: {}
