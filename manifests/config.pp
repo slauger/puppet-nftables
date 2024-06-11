@@ -12,9 +12,7 @@ class nftables::config {
     owner   => 'root',
     group   => 'root',
     mode    => '0640',
-    content => epp("${module_name}/etc/nftables/main.nft.epp", {
-      'allow_local_rules' => $nftables::allow_local_rules,
-    }),
+    content => epp("${module_name}/etc/nftables/main.nft.epp"),
   }
 
   file { '/etc/nftables/rules.d':
