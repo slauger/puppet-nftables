@@ -2,7 +2,7 @@ define nftables::rule (
   String $rule_name = $title,
   String $content,
 ) {
-  file { "/etc/nftables/rules.d/${filename}.nft":
+  file { "/etc/nftables/rules.d/${rule_name}.nft":
     ensure  => file,
     owner   => 'root',
     group   => 'root',
